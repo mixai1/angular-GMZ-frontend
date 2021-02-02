@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-frontend-GMZ"
+    }
+  },
+  "defaultProject": "angular-frontend-GMZ",
+  "cli": {
+    "analytics": false
+  }
 }
