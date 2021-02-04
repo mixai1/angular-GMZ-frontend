@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../shared/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sevrice: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    this.sevrice.register().subscribe(res=>{
+      console.log(res);
+    }, err =>{
+      console.log(err);
+    })
   }
 
 }
