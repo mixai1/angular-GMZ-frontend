@@ -1,0 +1,30 @@
+<div class="card bg-light">
+    <article class="card-body mx-auto">
+        <h4 class="card-title mt-3 text-center">Login</h4>
+        <p class="text-center">Enter your username and password to for logs</p>
+        <form #form='ngForm' (submit)="onSubmit()">
+            <div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input [(ngModel)]="formModel.userName" name="userName" class="form-control"
+                        placeholder="Your user name" type="text" required>
+                </div>
+            </div>
+            <div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <label for=""></label>
+                    <input [(ngModel)]="formModel.password" name="password" class="form-control"
+                        placeholder="Your password" type="password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block"> login </button>
+            </div>
+        </form>
+    </article>
+</div>
