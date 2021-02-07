@@ -14,16 +14,17 @@ export class UserService {
   form = this.fb.group({
     userName: ['', Validators.required],
     email: ['', Validators.email],
-    password: ['', [Validators.minLength(6),Validators.required]],
+    password: ['', [Validators.minLength(6), Validators.required]],
     confirmPassword: ['', [Validators.required]]
-   });
+  });
 
-   checkPasswords(group: FormGroup) {
-   const password = group.get('password').value;
-   const confirmPassword = group.get('confirmPassword').value;
- 
-   return password === confirmPassword ? null : { notSame: true }
- }
+  //vavidators for confirm password
+  checkPasswords(group: FormGroup) {
+    const password = group.get('password').value;
+    const confirmPassword = group.get('confirmPassword').value;
+
+    return password === confirmPassword ? null : { notSame: true }
+  }
 
   register() {
     const body = {
@@ -32,7 +33,10 @@ export class UserService {
       password: this.form.value.password
     }
     console.log(body);
+    return this.http.post(this.BaseUrl + 'Authorization/register', body);
+  }
+
+  login(){
     
-    return this.http.post(this.BaseUrl+'Authorization/register',body);
   }
 }
