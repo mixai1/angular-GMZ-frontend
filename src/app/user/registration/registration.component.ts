@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../../shared/user.service';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -11,9 +12,6 @@ export class RegistrationComponent implements OnInit {
 
   constructor(public sevrice: UserService, private toastr: ToastrService) { }
 
-// toastr not working,хз почему
-// TODO: fix toastr
-
   ngOnInit(): void {
     this.sevrice.form.reset();
   }
@@ -21,29 +19,25 @@ export class RegistrationComponent implements OnInit {
   onSubmit() {
     this.sevrice.register().subscribe(
       (res: any) => {
-        if (res.succeded) {
+        if (res.succeeded) {
+          console.log(res);
           this.sevrice.form.reset();
-          
           this.toastr.success('New user created', 'Registration successful.');
-          alert('New user created');
         }
-      },
-      (err: any) => {
-        console.log(err);
-        err.error.forEach(element => {
-          console.log(element);
-          switch (element.code) {
-            case "DuplicateUserName":
-              this.toastr.error('User name is already taken', 'Registration failde.');
-              alert('User name is already taken');
-              break;
-            default:
-              this.toastr.error(`${element.description}`, 'Registration failde.');
-              alert(`${element.description}`);
-              break;
+        else {
+          res.error.forEach(element => {
+            console.log(element);
+            switch (element.code) {
+              case "DuplicateUserName":
+                this.toastr.error('User name is already taken', 'Registration failde.');
+                break;
+              default:
+                this.toastr.error(`${element.description}`, 'Registration failde.');
+                break;
+            }
           }
+          )
         }
-        )
       }
     )
   }

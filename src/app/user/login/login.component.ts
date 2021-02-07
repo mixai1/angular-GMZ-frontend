@@ -9,14 +9,16 @@ import { UserService } from '../../shared/user.service';
 export class LoginComponent implements OnInit {
 
   constructor(public service: UserService) { }
-  formModel ={
+  
+  formModel = {
     userName: '',
     password: ''
   }
+
   ngOnInit(): void {
   }
-  onSubmit() {
 
+  onSubmit() {
   }
 
 }

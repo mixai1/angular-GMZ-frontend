@@ -33,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      progressBar: true
+      progressBar: true,
+      timeOut:5000
     }),
   ],
   providers: [UserService],
