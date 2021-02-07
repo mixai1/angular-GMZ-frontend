@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  BaseUrl: string = 'http://localhost:5000/api/';
+  BaseUrl: string = 'http://localhost:5000/api/Authorization/';
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -33,10 +33,10 @@ export class UserService {
       password: this.form.value.password
     }
     console.log(body);
-    return this.http.post(this.BaseUrl + 'Authorization/register', body);
+    return this.http.post(this.BaseUrl + 'register', body);
   }
 
-  login(){
-    
+  login(formData) {
+    return this.http.post(this.BaseUrl + 'login', formData);
   }
 }
