@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +38,10 @@ export class UserService {
 
   login(formData) {
     return this.http.post(this.BaseUrl + 'login', formData);
+  }
+  getUserProfile() {
+    const token = localStorage.getItem('token');
+    const tokenHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
+    return this.http.get('http://localhost:5000/api/UserProfile/userProfile', { headers: tokenHeader });
   }
 }
