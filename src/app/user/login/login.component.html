@@ -2,7 +2,7 @@
     <article class="card-body mx-auto">
         <h4 class="card-title mt-3 text-center">Login</h4>
         <p class="text-center">Enter your username and password to for logs</p>
-        <form #form='ngForm' (submit)="onSubmit()">
+        <form #form='ngForm' (submit)="onSubmit(form)">
             <div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
@@ -26,5 +26,8 @@
                 <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block"> login </button>
             </div>
         </form>
+        <div>
+            <p class="text-center">You don't have an account? <a href="user/registr">Registration</a> </p>
+        </div>
     </article>
 </div>

@@ -15,13 +15,17 @@ import { LoginComponent } from './user/login/login.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { UserService } from './shared/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
