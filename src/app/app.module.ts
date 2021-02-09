@@ -17,6 +17,9 @@ import { UserService } from './shared/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { CarouselComponent } from './element/carousel/carousel.component';
+import { ProductComponent } from './product/product.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { FooterComponent } from './layout/footer/footer.component';
     LoginComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CarouselComponent,
+    ProductComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
