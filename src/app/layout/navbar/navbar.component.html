@@ -1,23 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/home">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+  <div class="nav-wrapper">
+    <div class="container-m-30 clearfix">
+
+      <div class="logo-row">
+        <div class="logo-container-2 hidden-sm display-xxs-no">
+          <div class="logo-2">
+            <a href="/" class="clearfix">
+              <img src="../../../assets/images/fl_cut.png" class="logo-img" alt="Логотип МАЗ" style="overflow: hidden;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/product">Products</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Contacts</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/news">News</a>
-      </li>
-    </ul>
-    <button *ngIf="flag" class="btn btn-danger" (click)="onloguot()">Loguot</button>
-    <button *ngIf="!flag" class="btn btn-success" (click)="onLogin()">Login</button>
+    <div class="topnav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link active" href="/home">Главная</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link active" href="/product">Продукция</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Контакты</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">О предприятии</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/news">Новости</a>
+        </li>
+      </ul>
+    </div>
+    <!-- <button *ngIf="flag" class="btn btn-danger" (click)="onloguot()">Loguot</button>
+    <button *ngIf="!flag" class="btn btn-success" (click)="onLogin()">Login</button> -->
   </div>
 </nav>
