@@ -1,4 +1,44 @@
-.pt-110-b-60-cont {
-    padding-top: 110px;
-    padding-bottom: 60px;
+.container{
+    margin-top: 2rem;
+}
+.card{
+    padding-top: 2rem;
+}
+
+.mb-50 {
+    margin-bottom: 50px !important;
+}
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+.section-title2 {
+    margin: 0;
+    padding: 0px 25px 0px 0px;
+    font-family: 'Poppins',Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    color: #323336;
+}
+.line-3-75 {
+    margin-top: 10px;
+    height: 3px;
+    width: 90px;
+    background: #323336;
+}
+a {
+    color: #363234;
+    outline: none !important;
+    text-decoration: none;
+    transition: all .3s ease 0s;
+}
+
+.right {
+    float: right;
+}
+.section-more {
+    font-size: 14px;
+    font-weight: normal;
+    color: #6b6d6f;
 }

@@ -20,6 +20,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { CarouselComponent } from './element/carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { NewsComponent } from './news/news.component';
+import { ContactComponent } from './contact/contact.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { NewsComponent } from './news/news.component';
     FooterComponent,
     CarouselComponent,
     ProductComponent,
-    NewsComponent
+    NewsComponent,
+    ContactComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
