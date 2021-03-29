@@ -1,0 +1,17 @@
+/* body {
+    position: relative;
+  } */
+#titel-deport{
+    position: sticky;
+    top: 10rem;
+}
+a:hover {
+    border-bottom: 2px solid gray;
+}
+.line-3-75 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 3px;
+    width: 90px;
+    background: #323336;
+}

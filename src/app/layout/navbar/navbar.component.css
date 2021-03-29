@@ -29,7 +29,7 @@
     border-bottom: 3px solid transparent;
 }
 .topnav a:hover {
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid gray;
 }
 .container-m-31{
     position: relative;

@@ -22,6 +22,7 @@ import { ProductComponent } from './product/product.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { HistoryComponent } from './history/history.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HistoryComponent } from './history/history.component';
     ProductComponent,
     NewsComponent,
     ContactComponent,
-    HistoryComponent
+    HistoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

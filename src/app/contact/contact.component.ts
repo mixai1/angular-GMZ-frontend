@@ -12,4 +12,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toItem(n:Number){
+    document.getElementById(`item-${n}`).scrollIntoView({behavior:'smooth',block:"center"});
+  }
 }
