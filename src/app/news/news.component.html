@@ -1,3 +1,5 @@
+<H1>News</H1>
+
 <div class="container">
     <div class="card-group" *ngFor="let item of NewsList">
         <div class="card">
@@ -6,8 +8,8 @@
                     <div class="card-header"><strong>News</strong></div>
                     <div class="card-body">
                         <h5 class="card-title">{{item.header}}</h5>
-                        <p class="card-text">{{item.body}}</p>
-                        <a href="#" class="btn btn-primary">Know more</a>
+                        <p class="card-text">{{item.subTitles}}</p>
+                        <button (click)="onDetail()" class="btn btn-primary">Know more</button>
                     </div>
                     <div class="card-footer text-muted">Publication date: {{item.dateTime | date: 'yyyy-MM-dd'}}</div>
                 </span>
