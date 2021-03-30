@@ -15,4 +15,7 @@ export class HttpService {
   httpGet(url: string, heders = null) {
     return this.http.get(this.BaseUrl + `${url}`, { headers: heders });
   }
+  httpDelete(url: string,body){
+    return this.http.delete(this.BaseUrl+`${url}`,body);
+  }
 }

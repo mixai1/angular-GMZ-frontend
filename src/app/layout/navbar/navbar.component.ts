@@ -16,11 +16,10 @@ export class NavbarComponent implements OnInit {
       this.flag = true;
     }
   }
-  onloguot(){
-    localStorage.removeItem('token');
-    this.roter.navigateByUrl('user/login');
-  }
   onLogin(){
     this.roter.navigateByUrl('user/login');
+  }
+  UserProfile(){
+    this.roter.navigateByUrl('userProf');
   }
 }

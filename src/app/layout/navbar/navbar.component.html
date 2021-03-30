@@ -34,7 +34,9 @@
         </li>
       </ul>
     </div>
-    <!-- <button *ngIf="flag" class="btn btn-danger" (click)="onloguot()">Loguot</button>
-    <button *ngIf="!flag" class="btn btn-success" (click)="onLogin()">Login</button> -->
+    <div id="login_btn">
+      <i *ngIf="!flag" (click)="onLogin()"><img src="../../../assets/images/login.png" alt="Логин"></i>
+      <i *ngIf="flag" (click)="UserProfile()"><img src="../../../assets/images/User.png" alt="Пользвотель"></i>
+    </div> 
   </div>
 </nav>

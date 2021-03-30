@@ -23,6 +23,7 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NewsComponent,
     ContactComponent,
     HistoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
