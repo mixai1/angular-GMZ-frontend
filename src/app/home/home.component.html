@@ -12,24 +12,26 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" *ngFor="let news of ListNews">
         <div class="col-10">
             <a href="/">
-                <h5><strong>Заголовок новости новости новости новости новости новости новостиновости новости новости
-                        новости </strong></h5>
+                <h5>
+                    <strong>
+                        {{news.header}}
+                    </strong>
+                </h5>
             </a>
         </div>
         <div class="col-2">
             <span>
-                <strong>Дата публикации</strong>
-                <h6>21-09-2021</h6>
+                <strong>Дата публикации:</strong>
+                <h6>{{news.dateTime | date: 'dd-MM-yyyy'}}</h6>
             </span>
         </div>
         <div class="col-10">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eligendi architecto, ab doloribus
-                aspernatur doloremque soluta rem? Nihil praesentium, dignissimos cupiditate, aspernatur officiis eum
-                reiciendis repellat tempora optio nesciunt, soluta omnis odit fugit natus quas placeat perspiciatis
-                doloribus. Reprehenderit iure ab est earum natus aliquam ex obcaecati quam eaque beatae?</p>
+            <p>
+                {{news.body}}
+            </p>
         </div>
     </div>
     <div class="mb-50">
@@ -45,12 +47,12 @@
             </div>
             <div class="row">
                 <p><strong>Расчетный счет:</strong>
-                
+
                     BY95SLAN30123385400280000000 ЗАО Банк ВТБ (Беларусь)</p>
-                    <span>
-                        <p> г. Минск код SLANBY22
-                            УНН 500013376 ОКПО 05808215</p>
-                    </span>
+                <span>
+                    <p> г. Минск код SLANBY22
+                        УНН 500013376 ОКПО 05808215</p>
+                </span>
             </div>
             <div class="row">
                 <p><strong>Адрес:</strong> РБ, Гродно, Карского 20, 230003</p>

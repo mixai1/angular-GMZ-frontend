@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NewsService } from '../shared/news.service';
-import { News } from '../model/news';
+import { INews } from '../model/news';
 
 @Component({
   selector: 'app-news',
@@ -9,13 +9,16 @@ import { News } from '../model/news';
 })
 export class NewsComponent implements OnInit {
 
-  NewsList: News[];
+  NewsList: INews[];
   constructor(private service: NewsService) { }
 
   ngOnInit(): void {
     this.service.getNews().subscribe(
-      (res: News[]) => {
+      (res: INews[]) => {
         this.NewsList = res.reverse();
+      },
+      (err:any)=>{
+        console.log(err);
       }
     )
   }

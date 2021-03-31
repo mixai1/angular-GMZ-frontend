@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../../shared/user.service';
-import { Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +10,8 @@ import { Routes } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public sevrice: UserService, private toastr: ToastrService) { }
+  constructor(public sevrice: UserService, private toastr: ToastrService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.sevrice.form.reset();
@@ -20,23 +21,34 @@ export class RegistrationComponent implements OnInit {
     this.sevrice.register().subscribe(
       (res: any) => {
         if (res.succeeded) {
-          console.log(res);
           this.sevrice.form.reset();
-          this.toastr.success('New user created', 'Registration successful.');
+          this.toastr.success('Новый ползвотель создан', 'Успешная регистрация.');
+          this.router.navigateByUrl('user/login');
         }
-        else {
-          res.error.forEach(element => {
-            console.log(element);
-            switch (element.code) {
+        // TODO: fix response errors ? 
+        else{
+          res.errors.forEach(element => {
+            switch (element.code){
               case "DuplicateUserName":
-                this.toastr.error('User name is already taken', 'Registration failde.');
-                break;
+                this.toastr.error("fekfekek","Error");
+              break;
               default:
-                this.toastr.error(`${element.description}`, 'Registration failde.');
+                this.toastr.error(`${element.description}`,"feeef");
                 break;
             }
-          }
-          )
+          });
+        }
+        (err:any)=>{
+          err.errors.forEach(element => {
+            switch (element.code){
+              case "DuplicateUserName":
+                this.toastr.error("fekfekek","Error");
+              break;
+              default:
+                this.toastr.error(`${element.description}`,"feeef");
+                break;
+            }
+          });
         }
       }
     )

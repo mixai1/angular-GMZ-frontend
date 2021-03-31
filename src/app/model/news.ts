@@ -1,6 +1,6 @@
 import { Data } from "@angular/router";
 
-export interface News{
+export interface INews{
     header: string,
     body: string,
     subTitles: string,

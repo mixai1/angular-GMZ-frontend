@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfileService } from '../shared/user-profile.service';
+import { NewsService } from '../shared/news.service';
+import { INews } from '../model/news';
 
 @Component({
   selector: 'app-home',
@@ -8,20 +9,17 @@ import { UserProfileService } from '../shared/user-profile.service';
 })
 export class HomeComponent implements OnInit {
 
-  userProfile;
-  constructor(private service: UserProfileService) { }
+  ListNews:INews[];
+  constructor(private service: NewsService ) { }
 
   ngOnInit(): void {
-    this.service.getUserProfile().subscribe(
-      (res: any)=>{
-        this.userProfile = res;
-        console.log(res);
-      },
-      (err =>{
-        console.log(err);
-        
-      })
-    )
+   this.service.getSomeNews().subscribe((res:INews[])=>{
+    this.ListNews = res;
+    console.log(res);
+   },
+   (err:any)=>{
+    if(err.status==400){
+      console.log(err)
+    }});
   }
-
 }
