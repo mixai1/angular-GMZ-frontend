@@ -9,17 +9,18 @@ import { INews } from '../model/news';
 })
 export class HomeComponent implements OnInit {
 
-  ListNews:INews[];
-  constructor(private service: NewsService ) { }
+  ListNews: INews[];
+  constructor(private service: NewsService) { }
 
   ngOnInit(): void {
-   this.service.getSomeNews().subscribe((res:INews[])=>{
-    this.ListNews = res;
-    console.log(res);
-   },
-   (err:any)=>{
-    if(err.status==400){
-      console.log(err)
-    }});
+    this.service.getSomeNews().subscribe(
+      (res: INews[]) => {
+        this.ListNews = res;
+      },
+      (err: any) => {
+        if (err.status == 400) {
+          this.ListNews = null;
+        }
+      });
   }
 }

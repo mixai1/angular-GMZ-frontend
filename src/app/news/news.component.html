@@ -1,20 +1,60 @@
-<H1>News</H1>
-
+<!-- Header -->
 <div class="container">
-    <div class="card-group" *ngFor="let item of NewsList">
-        <div class="card">
-            <div class="card text-center">
-                <span class="border border-dark">
-                    <div class="card-header"><strong>News</strong></div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{item.header}}</h5>
-                        <p class="card-text">{{item.subTitles}}</p>
-                        <button (click)="onDetail()" class="btn btn-primary">Know more</button>
-                    </div>
-                    <div class="card-footer text-muted">Publication date: {{item.dateTime | date: 'yyyy-MM-dd'}}</div>
-                </span>
-            </div>
+    <div class="mb-50">
+        <h1 class="section-title2 pr-0">
+            <strong>Все новости</strong>
+        </h1>
+        <div class="line-3-75">
         </div>
-        <button *ngIf="isShow" id="UpBtn" class="btn btn-danger" (click)="gotoTop()">Back to top</button>
     </div>
 </div>
+
+<!-- Searche -->
+<div class="container">
+    <input type="text" placeholder="Поиск">
+    <label> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+    </label>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+</div>
+
+<!-- Loadr -->
+<div class="container" *ngIf="!NewsList">
+    <app-loader></app-loader>
+    <h4>Новостей еще нет</h4>
+    <img>
+</div>
+
+<!-- Cards -->
+<div class="container">
+    <div class="row">
+        <div id="content-card" class="col-lg-4 col-md-6" *ngFor="let item of NewsList">
+            <div class="card">
+                <img class="card-img-top" src="../../assets/images/test.jpg" alt="Новости">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.header}}</h5>
+                    <div class="date-news">
+                        <i class="bi bi-calendar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-calendar" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                            </svg>
+                        </i> {{item.dateTime | date}}
+                    </div>
+                    <div class="card-text">{{item.shortDescription}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button *ngIf="isShow" id="UpBtn" class="btn btn-danger" (click)="gotoTop()">Back to top</button>

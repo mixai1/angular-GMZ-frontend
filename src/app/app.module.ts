@@ -24,6 +24,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoaderComponent } from './element/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ContactComponent,
     HistoryComponent,
     NotFoundComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

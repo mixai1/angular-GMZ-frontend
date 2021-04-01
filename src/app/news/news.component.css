@@ -1,5 +1,19 @@
+.card-img-top{
+    width: 22rem;
+    height: 15rem;
+}
+.container{
+    margin-top: 10px;
+}
 .card{
-    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+.date-news{
+    color: #a3a6a8;
+    margin-bottom: 2;
+}
+.mb-50 {
+    margin-top: 15px;
 }
 
 #UpBtn{

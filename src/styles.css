@@ -8,3 +8,13 @@ h1,h2,h3,h4,h5,h6{
     font-weight: bold;
     font-style: oblique;
 }
+
+.line-3-75 {
+    margin-top: 10px;
+    height: 3px;
+    width: 90px;
+    background: #323336;
+}
+.mb-50 {
+    margin-bottom: 50px !important;
+}
