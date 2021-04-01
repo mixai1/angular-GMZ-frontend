@@ -10,21 +10,36 @@ import { INews } from '../model/news';
 export class NewsComponent implements OnInit {
 
   NewsList: INews[];
+  isShow: boolean;
+  topPosToStartShowing = 100;
+
   constructor(private service: NewsService) { }
 
   ngOnInit(): void {
     this.service.getNews().subscribe(
       (res: INews[]) => {
-        this.NewsList = res.reverse();
+        this.NewsList = this.sortDateNews(res);
       },
-      (err:any)=>{
+      (err: any) => {
         console.log(err);
       }
     )
   }
-  
-  isShow: boolean;
-  topPosToStartShowing = 100;
+
+  private sortDateNews(list: INews[]): INews[] {
+    let sortList: INews[] = list.sort((i, j) => {
+      return new Date(i.dateTime) > new Date(j.dateTime) ? -1 : 1;
+    });
+    return sortList;
+  }
+
+  gotoTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
   @HostListener('window:scroll')
   checkScroll() {
@@ -35,13 +50,4 @@ export class NewsComponent implements OnInit {
       this.isShow = false;
     }
   }
-
-  gotoTop() {
-    window.scroll({ 
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth' 
-    });
-  }
-
 }

@@ -1,7 +1,8 @@
+<!-- Carousel Componet -->
 <app-carousel></app-carousel>
 
 <div class="container">
-
+<!-- Header -->
     <div class="mb-50">
         <h1 class="section-title2 pr-0">
             <strong>Последние новости</strong>
@@ -10,7 +11,7 @@
         <div class="line-3-75">
         </div>
     </div>
-
+<!-- News list -->
     <div class="row" *ngFor="let news of ListNews">
         <div class="col-10">
             <a href="/">
@@ -33,6 +34,7 @@
             </p>
         </div>
     </div>
+<!-- Header -->
     <div class="mb-50">
         <h1 class="section-title2 pr-0">
             <strong>Реквизиты предприятия</strong>
@@ -40,13 +42,13 @@
         </h1>
         <div class="line-3-75">
         </div>
+<!-- Requisites -->
         <div class="container">
             <div class="row">
                 <h5>ОАО "Гродненский механический завод"</h5>
             </div>
             <div class="row">
-                <p><strong>Расчетный счет:</strong>
-
+                <p><strong>Расчетный счет:</strong> 
                     BY95SLAN30123385400280000000 ЗАО Банк ВТБ (Беларусь)</p>
                 <span>
                     <p> г. Минск код SLANBY22
@@ -66,6 +68,7 @@
                 <p><strong>Email:</strong> gmz@gmz.by</p>
             </div>
         </div>
+<!-- Header -->
         <div class="mb-50">
             <h1 class="section-title2 pr-0">
                 <strong>Актуальные вакансии</strong>
@@ -74,8 +77,11 @@
             <div class="line-3-75">
             </div>
         </div>
+<!-- Vacancies -->
         <div>
             <h3>
                 Здесь будут вакансии на работу !
             </h3>
         </div>
+<!-- GoToTop -->
+<img *ngIf="isShow" id="UpArrow" src="../../assets/images/gototop/up-arrow.png" (click)="gotoTop()">

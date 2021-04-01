@@ -16,12 +16,3 @@
     margin-top: 15px;
 }
 
-#UpBtn{
-    position: fixed;
-    bottom: 20px;
-    right: 5px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px;
-    outline: none;
-  }

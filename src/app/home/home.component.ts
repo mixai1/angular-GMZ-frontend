@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NewsService } from '../shared/news.service';
 import { INews } from '../model/news';
 
@@ -10,6 +10,8 @@ import { INews } from '../model/news';
 export class HomeComponent implements OnInit {
 
   ListNews: INews[];
+  isShow: boolean;
+  topPosToStartShowing = 100;
   constructor(private service: NewsService) { }
 
   ngOnInit(): void {
@@ -22,5 +24,23 @@ export class HomeComponent implements OnInit {
           this.ListNews = null;
         }
       });
+  }
+
+  gotoTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  }
+
+  @HostListener('window:scroll')
+  checkScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
   }
 }
