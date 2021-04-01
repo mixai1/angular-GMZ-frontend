@@ -9,7 +9,7 @@ export class CarouselComponent implements OnInit {
 
   constructor() { }
   
-  images = [1, 4, 5,98].map((n) => `../../../assets/images/slc0${n}.png`);
+  images = [1, 4, 5,98].map((n) => `../../../assets/images/carousel/slc0${n}.png`);
   ngOnInit(): void {
   }
 

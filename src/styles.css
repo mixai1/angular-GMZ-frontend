@@ -2,8 +2,28 @@
 @import '~ngx-toastr/toastr';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Acme|Anton|Cabin+Sketch|Covered+By+Your+Grace|Homemade+Apple|Lalezar|Lato:100,300,300i,700,900|Raleway:200,300,300i,400,600,700|Special+Elite|VT323');
+
 h1,h2,h3,h4,h5,h6{
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-style: oblique;
 }
+
+.line-3-75 {
+    margin-top: 10px;
+    height: 3px;
+    width: 90px;
+    background: #323336;
+}
+.mb-50 {
+    margin-bottom: 50px !important;
+}
+#UpArrow{
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+  }

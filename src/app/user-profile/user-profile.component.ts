@@ -14,7 +14,7 @@ export class UserProfileComponent implements OnInit {
   }
   onlogout(){
     localStorage.removeItem('token');
-    this.roter.navigateByUrl('user/login');
+    this.roter.navigateByUrl('/home');
   }
 
 }

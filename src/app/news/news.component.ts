@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NewsService } from '../shared/news.service';
-import { News } from '../model/news';
+import { INews } from '../model/news';
 
 @Component({
   selector: 'app-news',
@@ -9,43 +9,45 @@ import { News } from '../model/news';
 })
 export class NewsComponent implements OnInit {
 
-  NewsList: News[];
+  NewsList: INews[];
+  isShow: boolean;
+  topPosToStartShowing = 100;
+
   constructor(private service: NewsService) { }
 
   ngOnInit(): void {
     this.service.getNews().subscribe(
-      (res: News[]) => {
-        this.NewsList = res.reverse();
+      (res: INews[]) => {
+        this.NewsList = this.sortDateNews(res);
+      },
+      (err: any) => {
+        console.log(err);
       }
     )
   }
-  
-  onDetail(){
-    
+
+  private sortDateNews(list: INews[]): INews[] {
+    let sortList: INews[] = list.sort((i, j) => {
+      return new Date(i.dateTime) > new Date(j.dateTime) ? -1 : 1;
+    });
+    return sortList;
   }
 
-
-  isShow: boolean;
-  topPosToStartShowing = 100;
+  gotoTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
   @HostListener('window:scroll')
   checkScroll() {
-      
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    console.log('[scroll]', scrollPosition);
     if (scrollPosition >= this.topPosToStartShowing) {
       this.isShow = true;
     } else {
       this.isShow = false;
     }
   }
-
-  gotoTop() {
-    window.scroll({ 
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth' 
-    });
-  }
-
 }
