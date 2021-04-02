@@ -11,7 +11,8 @@ import { UserService } from '../../shared/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public service: UserService, private router: Router, private toastr: ToastrService) { }
+  constructor(public service: UserService, private router: Router,
+     private toastr: ToastrService) { }
 
   formModel = {
     userName: '',

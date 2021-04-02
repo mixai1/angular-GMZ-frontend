@@ -26,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoaderComponent } from './element/loader/loader.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NewsDetailComponent } from './news-detail/news-detail.component';
     NotFoundComponent,
     UserProfileComponent,
     LoaderComponent,
-    NewsDetailComponent
+    NewsDetailComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

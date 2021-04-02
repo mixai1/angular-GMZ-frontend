@@ -11,6 +11,8 @@ import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminAuthGuard } from './auth/admin-auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'history', component: HistoryComponent },
   { path: 'home', component: HomeComponent },
   { path: 'userProf', component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminPanelComponent, canActivate: [AdminAuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 
