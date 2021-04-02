@@ -4,14 +4,12 @@
 .card{
     padding-top: 2rem;
 }
-
 .mb-50 {
     margin-bottom: 50px !important;
 }
 .pr-0 {
     padding-right: 0 !important;
 }
-
 .section-title2 {
     margin: 0;
     padding: 0px 25px 0px 0px;
@@ -26,7 +24,9 @@ a {
     text-decoration: none;
     transition: all .3s ease 0s;
 }
-
+.select-news :hover{
+    color: gray;
+}
 .right {
     float: right;
 }

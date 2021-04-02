@@ -13,6 +13,6 @@ export class UserProfileService {
   getUserProfile() {
     const token = localStorage.getItem('token');
     const tokenHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.httpService.httpGet(this.BaseUrlUserProfile + '/userProfile', tokenHeader);
+    return this.httpService.httpGet(this.BaseUrlUserProfile, tokenHeader);
   }
 }

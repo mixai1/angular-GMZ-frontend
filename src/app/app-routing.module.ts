@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'user/login', component: LoginComponent },
   { path: 'product', component: ProductComponent },
   { path: 'news', component: NewsComponent },
+  { path: 'news/:id', component: NewsDetailComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'home', component: HomeComponent },

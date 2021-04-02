@@ -1,4 +1,19 @@
 <div class="container">
-    <h2>User Profile</h2>
+    <div class="row">
+        <div class="col">
+            <div class="mb-50">
+                <h1 class="section-title2 pr-0">
+                    <strong>Вашь профиль</strong>
+                </h1>
+                <div class="line-3-75">
+                </div>
+            </div>
+            <p>Ваш Email: <strong><p>{{dataUser.email}}</p></strong></p>
+            <p>Ваш UserName: <strong><p>{{dataUser.userName}}</p></strong></p>
+        <div *ngFor="let role of roles">
+            <p>Ваш Roles: <strong><p>{{role}}</p></strong></p>
+        </div>
+        </div>
+    </div>
     <button class="btn-primary" (click)="onlogout()">Loguot</button>
 </div>

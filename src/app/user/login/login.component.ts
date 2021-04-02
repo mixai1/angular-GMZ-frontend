@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
     this.service.login(form.value).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.token);
+        this.toastr.success("Вы успешно вошли","Успешная аутентификация")
         this.router.navigateByUrl('/');
       },
       err => {
         if (err.status == 400) {
-          this.toastr.error('Incorrect username or password', 'Authentication faild.');
+          this.toastr.error('Неверный логин или пороль','Неудачная аутентификация');
         }
       }
     )
