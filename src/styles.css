@@ -18,6 +18,9 @@ h1,h2,h3,h4,h5,h6{
 .mb-50 {
     margin-bottom: 50px !important;
 }
+a{
+    color: black;
+}
 #UpArrow{
     position: fixed;
     bottom: 20px;

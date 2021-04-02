@@ -14,7 +14,7 @@
 <!-- News list -->
     <div class="row" *ngFor="let news of ListNews">
         <div class="col-10">
-            <a href="/">
+            <a class="select-news" href="/news/{{news.id}}">
                 <h5>
                     <strong>
                         {{news.header}}

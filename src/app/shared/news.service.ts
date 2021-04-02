@@ -7,12 +7,16 @@ import { HttpService } from './httpservice/http.service';
 export class NewsService {
 
   BaseUrlNews: string = 'RecordNews/';
+  CountNews: Number = 4;
   constructor(private httpService: HttpService) { }
 
-  getNews(){
-    return this.httpService.httpGet(this.BaseUrlNews +'allRecords');
+  getFullNews(id: any) {
+    return this.httpService.httpGet(this.BaseUrlNews + 'findRecord/' + `${id}`);
   }
-  getSomeNews(count:Number = 4){
-    return this.httpService.httpGet(this.BaseUrlNews+'someRecords/'+count);
+  getNews() {
+    return this.httpService.httpGet(this.BaseUrlNews + 'allRecords');
+  }
+  getSomeNews() {
+    return this.httpService.httpGet(this.BaseUrlNews + 'someRecords/' + this.CountNews);
   }
 }

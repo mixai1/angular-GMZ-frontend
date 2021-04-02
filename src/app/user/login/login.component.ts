@@ -11,7 +11,8 @@ import { UserService } from '../../shared/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public service: UserService, private router: Router, private toastr: ToastrService) { }
+  constructor(public service: UserService, private router: Router,
+     private toastr: ToastrService) { }
 
   formModel = {
     userName: '',
@@ -28,11 +29,12 @@ export class LoginComponent implements OnInit {
     this.service.login(form.value).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.token);
+        this.toastr.success("Вы успешно вошли","Успешная аутентификация")
         this.router.navigateByUrl('/');
       },
       err => {
         if (err.status == 400) {
-          this.toastr.error('Incorrect username or password', 'Authentication faild.');
+          this.toastr.error('Неверный логин или пороль','Неудачная аутентификация');
         }
       }
     )

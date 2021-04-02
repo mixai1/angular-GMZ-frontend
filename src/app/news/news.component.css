@@ -12,6 +12,9 @@
     color: #a3a6a8;
     margin-bottom: 2;
 }
+.select-news :hover{
+    color: gray;
+}
 .mb-50 {
     margin-top: 15px;
 }

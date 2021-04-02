@@ -1,0 +1,10 @@
+.header-news{
+    text-align: center;
+    margin: 10, 10 px;
+}
+img{
+    width: 50rem;
+}
+.news-header :hover{
+    color: gray;
+}
