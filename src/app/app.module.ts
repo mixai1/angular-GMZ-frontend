@@ -23,29 +23,24 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoaderComponent } from './element/loader/loader.component';
-import { NewsDetailComponent } from './news-detail/news-detail.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { ContactModule } from './contact/contact.module';
+import { HistoryModule } from './history/history.module';
+import { UserProfileModule } from './user-profile/user-profile.module';
+import { NewsModule } from './news/news.module';
+import { UserModule } from './user/user.module';
+import { AdminPanelModule } from './admin-panel/admin-panel.module';
+import { ProductModule } from './product/product.module';
+import { HomeModule } from './home/home.module';
+import { ElementModule } from './element/element.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent,
-    LoginComponent,
     NavbarComponent,
-    HomeComponent,
     FooterComponent,
-    CarouselComponent,
-    ProductComponent,
-    NewsComponent,
-    ContactComponent,
-    HistoryComponent,
     NotFoundComponent,
-    UserProfileComponent,
-    LoaderComponent,
-    NewsDetailComponent,
-    AdminPanelComponent
+
   ],
   imports: [
     BrowserModule,
@@ -53,8 +48,17 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     ReactiveFormsModule,
     AppRoutingModule,
     NgbModule,
+    ElementModule,
     HttpClientModule,
     CommonModule,
+    HomeModule,
+    NewsModule,
+    ProductModule,
+    AdminPanelModule,
+    UserProfileModule,
+    UserModule,
+    ContactModule,
+    HistoryModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       progressBar: true,
@@ -62,6 +66,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     }),
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [LoaderComponent]
 })
 export class AppModule { }
