@@ -5,6 +5,6 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [ElementModule,CommonModule],
+  imports: [ElementModule,CommonModule]
 })
 export class HomeModule { }

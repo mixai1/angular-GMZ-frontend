@@ -18,9 +18,8 @@ export class AdminAuthGuard implements CanActivate {
     if (await this.service.isAdminCheck()) {
       this.toastr.success("Панель Администратора", "Wellcome");
       return true;
-    } else {
+    }
       this.router.navigateByUrl('/home')
       return false;
-    }
   }
 }
