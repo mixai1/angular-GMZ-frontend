@@ -2,7 +2,7 @@
 <div class="container">
     <div class="mb-50">
         <h1 class="section-title2 pr-0">
-            <strong>Все новости</strong>
+            <strong>Новости</strong>
         </h1>
         <div class="line-3-75">
         </div>
@@ -24,8 +24,8 @@
 
     <label for="selecpicker">поиск</label>
     <select class="mdb-select md-form">
-        <option>Mustard</option>
-        <option>Ketchup</option>
+        <option>за год</option>
+        <option>за месяц</option>
         <option>Relish</option>
     </select>
 
@@ -33,8 +33,8 @@
 
 <!-- Loadr -->
 <div class="container" *ngIf="!NewsList">
+    <h4 style="text-align: center;">Новостей еще нет</h4>
     <app-loader></app-loader>
-    <h4>Новостей еще нет</h4>
     <img>
 </div>
 

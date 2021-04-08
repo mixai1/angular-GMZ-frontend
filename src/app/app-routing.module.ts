@@ -13,12 +13,25 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminAuthGuard } from './auth/admin-auth.guard';
+import { ProductAPPComponent } from './product/product-app/product-app.component';
+import { ProductANComponent } from './product/product-an/product-an.component';
+import { ProductASComponent } from './product/product-as/product-as.component';
+import { ItemProdComponent } from './product/item-prod/item-prod.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'user/registr', component: RegistrationComponent },
   { path: 'user/login', component: LoginComponent },
-  { path: 'product', component: ProductComponent },
+  {
+    path: 'product', component: ProductComponent,
+    children:
+      [
+        { path: 'app-prod', component: ProductAPPComponent },
+        { path: 'an-prod', component: ProductANComponent },
+        { path: 'as-prod', component: ProductASComponent }
+      ]
+  },
+  { path: 'product/:id', component: ItemProdComponent },
   { path: 'news', component: NewsComponent },
   { path: 'news/:id', component: NewsDetailComponent },
   { path: 'contact', component: ContactComponent },
