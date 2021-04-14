@@ -1,13 +1,45 @@
+<div class="container">
+    <app-create-news></app-create-news>
+</div>
+<div class="container">
+    <div *ngIf="">
+
+    </div>
+    <button class="btn" (click)="showAllNews()">Все новости</button>
+</div>
+<!-- Add News -->
 <div class="container-fluid">
+    <!-- <div class="form-group">
+        <label>Добавить новость</label>
+        <form [formGroup]="services.newsForm" (click)="onSubmit()">
+            <div class="form-group">
+                <label>Заголовок</label>
+                <label class="text-danger"
+                *ngif="services.newsForm.get('header')"
+                >120</label>
+                <input formControlName="header" class="form-control" type="text">
+            </div>
+        </form>
+    </div> -->
+</div>
+
+<div class="container-fluid">
+    <form [formGroup]="formTemplateDocument" (submit)="onSubmit(formTemplateDocument.value)"></form>
     <div class="form-group">
-        <label>Загрузка файлов</label>
-        <input type="file" 
-        class="form-control"
-        (change)="onfileupLoads($event)">
+        <label>Имя документ</label>
+        <input placeholder="Имя документа" class="form-control" type="text" formControleName="name">
+        <label *ngIf="" class="text-danger">Обязательное поле</label>
+        <label *ngIf="" class="text-danger">Допустимая длина 100 символ</label>
     </div>
     <div class="form-group">
-        <button 
-        (click)="onSave()"
-        class="btn btn-success">submit</button>
+        <label>Описание документ</label>
+        <textarea class="form-control" formControleName="discription"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Добавить документ</label>
+        <input class="form-control" accept=".pdf" type="file" formControleName="documentUrl">
+    </div>
+    <div class="form-group">
+        <button type="submit">Добавить документ</button>
     </div>
 </div>

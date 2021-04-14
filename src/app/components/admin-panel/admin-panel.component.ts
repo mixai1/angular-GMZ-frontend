@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { fileURLToPath } from 'url';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NewsService } from '../../services/news/news.service';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-admin-panel',
@@ -11,14 +13,28 @@ export class AdminPanelComponent implements OnInit {
 
   images: any[];
   file: File;
-  constructor(private http: HttpClient) { }
+  isShowAllNews: boolean = false;
+  constructor(private storage: AngularFireStorage) { }
   ngOnInit(): void { }
 
-  onfileupLoads(event) {
-    this.file = event.target.files;
-    console.log(this.file);
-  }
-  onSave() {
+  showAllNews(){
+    this.isShowAllNews = true;
   }
 
+  formTemplateDocument = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+    discription: new FormControl('',[Validators.required, Validators.maxLength(120)]),
+    documentUrl: new FormControl('',[Validators.required])
+  });
+
+  onSubmit(formValue: any) {
+    console.log("onSubmit");
+    if(this.formTemplateDocument.valid){
+      this.storage.upload(`document/${formValue.name}`,formValue.target.files[0]);
+    }
+  }
+
+  get formControls(){
+    return this.formTemplateDocument['controls'];
+  }
 }

@@ -5,6 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -24,6 +27,8 @@ import { HomeModule } from './components/home/home.module';
 import { ElementModule } from './components/element/element.module';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { ContactModule } from './components/contact/contact.module';
+import { environment } from '../environments/environment.prod';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +39,9 @@ import { ContactModule } from './components/contact/contact.module';
 
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     FormsModule,
     AngularFileUploaderModule,
