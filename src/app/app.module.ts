@@ -10,32 +10,33 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { UserService } from './shared/user.service';
-import { FooterComponent } from './layout/footer/footer.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { LoaderComponent } from './element/loader/loader.component';
-import { ContactModule } from './contact/contact.module';
-import { HistoryModule } from './history/history.module';
-import { UserProfileModule } from './user-profile/user-profile.module';
-import { NewsModule } from './news/news.module';
-import { UserModule } from './user/user.module';
-import { AdminPanelModule } from './admin-panel/admin-panel.module';
-import { ProductModule } from './product/product.module';
-import { HomeModule } from './home/home.module';
-import { ElementModule } from './element/element.module';
+import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { UserService } from './services/user/user.service';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HistoryModule } from './components/history/history.module';
+import { UserProfileModule } from './components/user-profile/user-profile.module';
+import { NewsModule } from './components/news/news.module';
+import { UserModule } from './components/user/user.module';
+import { AdminPanelModule } from './components/admin-panel/admin-panel.module';
+import { ProductModule } from './components/product/product.module';
+import { HomeModule } from './components/home/home.module';
+import { ElementModule } from './components/element/element.module';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { ContactModule } from './components/contact/contact.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    NotFoundComponent,
+    NotFoundComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AngularFileUploaderModule,
     ReactiveFormsModule,
     AppRoutingModule,
     NgbModule,
@@ -58,6 +59,6 @@ import { ElementModule } from './element/element.module';
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
-  exports: [LoaderComponent]
+  exports: []
 })
 export class AppModule { }
