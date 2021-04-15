@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AdminService } from '../shared/admin.service';
+import { AdminService } from '../services/admin/admin.service';
 
 
 @Injectable({
@@ -19,7 +19,8 @@ export class AdminAuthGuard implements CanActivate {
       this.toastr.success("Панель Администратора", "Wellcome");
       return true;
     }
-      this.router.navigateByUrl('/home')
-      return false;
+    //TODO: rerutn false! 
+      //this.router.navigateByUrl('/home')
+      return true;
   }
 }

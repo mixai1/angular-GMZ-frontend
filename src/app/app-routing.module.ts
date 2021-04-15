@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegistrationComponent } from './user/registration/registration.component';
-import { LoginComponent } from './user/login/login.component';
-import { HomeComponent } from './home/home.component';
+
+import { RegistrationComponent } from './components/user/registration/registration.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './auth/auth.guard';
-import { ProductComponent } from './product/product.component';
-import { NewsComponent } from './news/news.component';
-import { ContactComponent } from './contact/contact.component';
-import { HistoryComponent } from './history/history.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { NewsDetailComponent } from './news-detail/news-detail.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { ProductComponent } from './components/product/product.component';
+import { NewsComponent } from './components/news/news.component';
+import { HistoryComponent } from './components/history/history.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { NewsDetailComponent } from './components/news-detail/news-detail.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 import { AdminAuthGuard } from './auth/admin-auth.guard';
-import { ProductAPPComponent } from './product/product-app/product-app.component';
-import { ProductANComponent } from './product/product-an/product-an.component';
-import { ProductASComponent } from './product/product-as/product-as.component';
-import { ItemProdComponent } from './product/item-prod/item-prod.component';
+import { ProductAPPComponent } from './components/product/product-app/product-app.component';
+import { ProductANComponent } from './components/product/product-an/product-an.component';
+import { ProductASComponent } from './components/product/product-as/product-as.component';
+import { ItemProdComponent } from './components/product/item-prod/item-prod.component';
+import { ProductAllComponent } from './components/product/product-all/product-all.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,6 +28,7 @@ const routes: Routes = [
     path: 'product', component: ProductComponent,
     children:
       [
+        { path: 'all-prod', component: ProductAllComponent },
         { path: 'app-prod', component: ProductAPPComponent },
         { path: 'an-prod', component: ProductANComponent },
         { path: 'as-prod', component: ProductASComponent }
