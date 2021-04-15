@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NewsService } from '../../services/news/news.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({

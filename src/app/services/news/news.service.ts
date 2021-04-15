@@ -13,9 +13,10 @@ export class NewsService {
   constructor(private httpService: HttpService, private fb: FormBuilder) { }
 
   formNewsModel = this.fb.group({
-    header: ['', [Validators.required,Validators.maxLength(100)]],
-    shortDescription: ['', [Validators.required,Validators.maxLength(120)]],
+    header: ['', [Validators.required, Validators.maxLength(100)]],
+    shortDescription: ['', [Validators.required, Validators.maxLength(120)]],
     body: ['', [Validators.required]],
+    imageURL: [''],
     dateTime: [Date.UTC]
   });
 
@@ -24,18 +25,21 @@ export class NewsService {
       header: this.formNewsModel.value.header,
       shortDescription: this.formNewsModel.value.shortDescription,
       body: this.formNewsModel.value.body,
+      imageURL: this.formNewsModel.value.imageURL,
       dateTime: this.formNewsModel.value.dateTime,
     }
-    return this.httpService.httpPost(this.BaseUrlNews + "createRecord", Boby);
+    return this.httpService.httpPost(this.BaseUrlNews + "record", Boby);
   }
-
+  deletNews(id: any) {
+    return this.httpService.httpDelete(this.BaseUrlNews + 'record/' + `${id}`);
+  }
   getFullNews(id: any) {
-    return this.httpService.httpGet(this.BaseUrlNews + 'findRecord/' + `${id}`);
+    return this.httpService.httpGet(this.BaseUrlNews + 'record/' + `${id}`);
   }
   getNews() {
-    return this.httpService.httpGet(this.BaseUrlNews + 'allRecords');
+    return this.httpService.httpGet(this.BaseUrlNews + 'records');
   }
   getSomeNews() {
-    return this.httpService.httpGet(this.BaseUrlNews + 'someRecords/' + this.CountNews);
+    return this.httpService.httpGet(this.BaseUrlNews + 'records/' + this.CountNews);
   }
 }

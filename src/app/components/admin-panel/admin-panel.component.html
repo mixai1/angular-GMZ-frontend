@@ -1,9 +1,16 @@
 <div class="container">
+    <div class="mb-50">
+        <h4 class="section-title2 pr-0">
+            <strong>Редактор новостей</strong>
+        </h4>
+        <div class="line-3-75">
+        </div>
+    </div>
     <app-create-news></app-create-news>
 </div>
-<div class="container">
-    <div *ngIf="">
-
+<div>
+    <div *ngIf="isShowAllNews">
+        <app-view-all-news></app-view-all-news>
     </div>
     <button class="btn" (click)="showAllNews()">Все новости</button>
 </div>

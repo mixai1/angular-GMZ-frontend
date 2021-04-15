@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
 
+  //TODO: Fix ULR base after deploy api
   BaseUrl: string = 'http://localhost:5000/api/';
   constructor(private http: HttpClient) { }
 
@@ -15,7 +16,7 @@ export class HttpService {
   httpGet(url: string, heders = null) {
     return this.http.get(this.BaseUrl + `${url}`, { headers: heders });
   }
-  httpDelete(url: string,body){
-    return this.http.delete(this.BaseUrl+`${url}`,body);
+  httpDelete(url: string) {
+    return this.http.delete(this.BaseUrl + `${url}`);
   }
 }

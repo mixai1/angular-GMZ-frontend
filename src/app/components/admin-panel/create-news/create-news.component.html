@@ -1,32 +1,31 @@
-<form [formGroup] = "service.formNewsModel" (submit) = "onSubmit()" autocomplete="off">
-    <div class="form-group required">
-      <label for="exampleFormControlInput1">Заголовок</label>
-      <input type="text" class="form-control" placeholder="Заголовок, до 100 символов" 
-      formControlName="header" required>
-    </div>
+<form [formGroup]="service.formNewsModel" (submit)="onSubmit()" autocomplete="off">
+  <div class="form-group required">
+    <label for="exampleFormControlInput1">Заголовок</label>
+    <input type="text" class="form-control" placeholder="Заголовок, до 100 символов" formControlName="header" required>
+  </div>
+  <div class="form-group required">
+    <label for="exampleFormControlInput1">URL-photo</label>
+    <input type="url" class="form-control" placeholder="URL" formControlName="imageURL">
+  </div>
 
-    <!-- <div class="form-group required">
-        <label for="exampleFormControlInput1">URL-photo</label>
-        <input type="url" class="form-control" placeholder="URL" formControlName="URL" required>
-      </div> -->
-      
-    <!-- <div class="form-group">
+  <!-- <div class="form-group">
         <label for="exampleFormControlInput1">URL картинки</label>
         <input type="url" class="form-control" placeholder="" formControlName="urlimages">
     </div> -->
-    
-    <div class="form-group required">
-      <label for="exampleFormControlTextarea1">Описание</label>
-      <textarea class="form-control" placeholder="Краткое описание, до 120 символов" rows="2"
-       formControlName="shortDescription" required></textarea>
-    </div>
-    <div class="form-group required">
-        <label for="exampleFormControlInput1">Текст</label>
-        <textarea class="form-control" placeholder="Текст новости" formControlName="body" required></textarea>
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Дата</label>
-        <input type="date" class="form-control" placeholder="" formControlName="dateTime">
-    </div>
-    <button type="submit" class="btn btn-lg btn-block" [disabled]= "service.formNewsModel.invalid">Submit</button>
-  </form>
+
+  <div class="form-group required">
+    <label for="exampleFormControlTextarea1">Описание</label>
+    <textarea class="form-control" placeholder="Краткое описание, до 120 символов" rows="2"
+      formControlName="shortDescription" required></textarea>
+  </div>
+  <div class="form-group required">
+    <label for="exampleFormControlInput1">Текст</label>
+    <textarea class="form-control" placeholder="Текст новости" formControlName="body" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Дата</label>
+    <input type="date" class="form-control" placeholder="" formControlName="dateTime">
+  </div>
+  <button type="submit" class="btn btn-success btn-block" [disabled]="service.formNewsModel.invalid">
+    Добавить новость</button>
+</form>

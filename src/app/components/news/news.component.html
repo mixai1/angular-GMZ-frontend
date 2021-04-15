@@ -43,7 +43,9 @@
         <div id="content-card" class="col-lg-4 col-md-6" *ngFor="let item of NewsList">
             <div class="card">
                 <a class="select-news" href="/news/{{item.id}}">
-                    <img class="card-img-top" src="../../assets/images/test.jpg" alt="Новости">
+                    <!-- //TODO: fix url -->
+                    <!-- <img class="card-img-top" src="{{item.imageUrl}}" alt="Новости"> -->
+                    <img class="card-img-top" src="../../../assets/images/test.jpg" alt="Новости">
                 </a>
                 <div class="card-body">
                     <a class="select-news" href="/news/{{item.id}}">
