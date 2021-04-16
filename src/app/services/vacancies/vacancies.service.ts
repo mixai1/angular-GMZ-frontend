@@ -12,12 +12,24 @@ export class VacanciesService {
 
   formVacanciesModel = this.fb.group({
     name:['',[Validators.required, Validators.maxLength(120)]],
-    salary:[Number],
-    Description: [''],
-    Requirements: [''],
-    WorkExperience: [''],
-    DateTime: [Date.UTC,[Validators.required]]
+    salary:[0],
+    description: [''],
+    requirements: [''],
+    workExperience: [''],
+    dateTime: [Date.UTC]
   });
+
+  createVacancies(){
+    let body ={
+      name: this.formVacanciesModel.value.name,
+      salary: this.formVacanciesModel.value.salary,
+      description: this.formVacanciesModel.value.description,
+      requirements: this.formVacanciesModel.value.requirements,
+      workExperience: this.formVacanciesModel.value.workExperience,
+      dateTime: this.formVacanciesModel.value.dateTime
+    }
+    return this.http.httpPost(this.BaseURl,body);
+  }
 
   deleteVacancies(id: any) {
     return this.http.httpDelete(this.BaseURl + `${id}`);

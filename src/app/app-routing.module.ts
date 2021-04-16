@@ -19,6 +19,9 @@ import { ProductASComponent } from './components/product/product-as/product-as.c
 import { ItemProdComponent } from './components/product/item-prod/item-prod.component';
 import { ProductAllComponent } from './components/product/product-all/product-all.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CreateNewsComponent } from './components/admin-panel/create-news/create-news.component';
+import { ViewAllNewsComponent } from './components/admin-panel/view-all-news/view-all-news.component';
+import { CreateVacanciesComponent } from './components/admin-panel/create-vacancies/create-vacancies.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,7 +44,15 @@ const routes: Routes = [
   { path: 'history', component: HistoryComponent },
   { path: 'home', component: HomeComponent },
   { path: 'userProf', component: UserProfileComponent, canActivate: [AuthGuard] },
-  { path: 'admin', component: AdminPanelComponent, canActivate: [AdminAuthGuard] },
+  {
+    path: 'admin', children:
+      [
+        { path: 'create-news', component: CreateNewsComponent },
+        { path: 'review-news', component: ViewAllNewsComponent },
+        { path: 'create-vacancies', component: CreateVacanciesComponent }
+
+      ], component: AdminPanelComponent, canActivate: [AdminAuthGuard]
+  },
   { path: '**', component: NotFoundComponent }
 ];
 

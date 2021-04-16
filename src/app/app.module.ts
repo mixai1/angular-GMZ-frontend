@@ -29,14 +29,12 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { ContactModule } from './components/contact/contact.module';
 import { environment } from '../environments/environment.prod';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
     NotFoundComponent
-
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

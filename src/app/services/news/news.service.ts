@@ -21,14 +21,14 @@ export class NewsService {
   });
 
   createNews() {
-    let Boby = {
+    let boby = {
       header: this.formNewsModel.value.header,
       shortDescription: this.formNewsModel.value.shortDescription,
       body: this.formNewsModel.value.body,
       imageURL: this.formNewsModel.value.imageURL,
       dateTime: this.formNewsModel.value.dateTime,
     }
-    return this.httpService.httpPost(this.BaseUrlNews + "record", Boby);
+    return this.httpService.httpPost(this.BaseUrlNews + 'record', boby);
   }
   deletNews(id: any) {
     return this.httpService.httpDelete(this.BaseUrlNews + 'record/' + `${id}`);

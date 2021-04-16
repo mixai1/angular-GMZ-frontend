@@ -16,7 +16,6 @@ export class CreateNewsComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    console.log("onSubmit")
     this.service.createNews().subscribe((res: any) => {
       this.toastr.success("Новость успешно добавлена","Успешное добавление")
       this.service.formNewsModel.reset();
